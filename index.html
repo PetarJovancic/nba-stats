@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NBA App</title>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
+    <script src="js/bootstrap.js" ></script>    
+</head>
+<body>
+    <div class="container">
+        <div class="header">            
+            <h1 style="text-align:center"><img src="NBA_image.png" id="logo" width="64" height="128">NBA Statistics</h1>
+        </div>          
+        <div class="jumbotron">
+            <input type="text" id="search-field" placeholder="search NBA player...">
+            <button type="submit" class="btn btn-link btn-sm" id="link-search-teams">Show all teams</button>
+            <button type="submit" class="btn btn-link btn-sm" id="link-search-games">Show all games</button>
+            <div class="modal" id="modal-teams" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="all-nba-teams">All NBA Teams</h5>
+                      <button type="button" class="close-teams" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>City</th>
+                                    <th>Division</th>
+                                    <th>Full Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teams-table"></tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="modal" id="modal-stats" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" id="dialog-stats" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="stats">Player Stats</h5>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Games Played</th>
+                                    <th>Points</th>
+                                    <th>Rebounds</th>
+                                    <th>Assists</th>
+                                    <th>Blocks</th>
+                                    <th>Steals</th>
+                                    <th>Turnovers</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stats-table"></tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="row">
+            <div class="col-md-12">
+                    <table class="table table-striped table-hover" id="nba-players">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Surname</th>                                
+                                <th>Team</th>
+                                <th>Position</th>
+                                <th>Height(ft)</th>
+                                <th>Weight(lbs)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-table"></tbody>
+                    </table>
+                    <div class="pagenumbers" id="pagination"></div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col text-center">
+            <div id="pagination-wrapper"></div>
+        </div>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>
